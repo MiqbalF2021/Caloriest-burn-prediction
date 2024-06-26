@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Untuk Firefox */
+  html {
+    scrollbar-width: none;
+  }
+  
+  /* Untuk elemen tertentu */
+  .container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .container {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+  }
+
+
+/* Tambahkan ini di file CSS Anda */
+.loader {
+  border-top-color: #F97300;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
