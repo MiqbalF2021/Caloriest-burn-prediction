@@ -21,7 +21,7 @@ const RecordActivity = () => {
         navigate("/login");
       }
       const { data } = await axios.post(
-        "http://localhost:4000",
+        "https://caloriest-burn-prediction-backend.vercel.app/",
         {},
         { withCredentials: true }
       );
@@ -73,7 +73,7 @@ const RecordActivity = () => {
     if (predictedCalories !== null) {
       try {
         // Mengirim data ke Express untuk menyimpan riwayat
-        await axios.post("http://localhost:4000/api/saveHistory", {
+        await axios.post("https://caloriest-burn-prediction-backend.vercel.app/api/saveHistory", {
           exercise: exercise,
           userId: id, // Menggunakan ID pengguna dari respons verifikasi
           caloriesBurn: predictedCalories,

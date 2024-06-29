@@ -27,7 +27,7 @@ const Login = () => {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/login",
+        "https://caloriest-burn-prediction-backend.vercel.app/login",
         {
           ...inputValue,
         },

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import CustomAlert from "./CustomAlert";
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
@@ -32,7 +33,7 @@ const Register = () => {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/signup",
+        "https://caloriest-burn-prediction-backend.vercel.app/signup",
         {
           ...inputValue,
         },

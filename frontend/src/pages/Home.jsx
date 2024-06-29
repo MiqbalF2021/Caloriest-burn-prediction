@@ -28,7 +28,7 @@ const Home = () => {
       }
       try {
         const { data } = await axios.post(
-          "http://localhost:4000",
+          "https://caloriest-burn-prediction-backend.vercel.app/",
           {},
           { withCredentials: true }
         );
@@ -51,7 +51,7 @@ const Home = () => {
         });
 
         // Fetch user history to calculate total calories
-        const historyData = await axios.get(`http://localhost:4000/api/getHistory/${id}`);
+        const historyData = await axios.get(`https://caloriest-burn-prediction-backend.vercel.app/api/getHistory/${id}`);
         setHistory(historyData.data);
 
         const totalCaloriesBurned = historyData.data.reduce((total, record) => total + record.caloriesBurn, 0);
@@ -166,9 +166,9 @@ const Home = () => {
 
     <div className="fixed bottom-16 right-7 lg:right-14">
       <Link to="/record" className="flex justify-end text-light font-bold hover:text-green hover:duration-200">
-        <p className='bg-green hover:scale-105 hover:transition px-7 py-5 rounded-full hover:bg-opacity-20 hover:duration-200 hover:border-green'>
+        <div className='bg-green hover:scale-105 hover:transition px-7 py-5 rounded-full hover:bg-opacity-20 hover:duration-200 hover:border-green'>
           <p className='text-2xl font-extrabold'>+</p>
-        </p>
+        </div>
       </Link>
     </div>
   </div>

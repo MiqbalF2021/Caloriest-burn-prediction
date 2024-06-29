@@ -17,7 +17,7 @@ const ViewProfile = () => {
       }
       try {
         const { data } = await axios.post(
-          "http://localhost:4000",
+          "https://caloriest-burn-prediction-backend.vercel.app/",
           {},
           { withCredentials: true }
         );
@@ -25,7 +25,7 @@ const ViewProfile = () => {
         if (status) {
           setUsername(user);
           const profileResponse = await axios.get(
-            `http://localhost:4000/api/userProfile/${user}`,
+            `https://caloriest-burn-prediction-backend.vercel.app/api/userProfile/${user}`,
             { withCredentials: true }
           );
           setProfile(profileResponse.data);

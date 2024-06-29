@@ -21,7 +21,7 @@ const ShowProfile = () => {
         navigate("/login");
       }
       const { data } = await axios.post(
-        "http://localhost:4000",
+        "https://caloriest-burn-prediction-backend.vercel.app/",
         {},
         { withCredentials: true }
       );
